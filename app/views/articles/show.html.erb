@@ -1,8 +1,11 @@
 <nav>
-  <a href="/articles">
+  <%# <a href="/articles">
     Back
-  </a>
+  </a> %>
+  <%= link_to "Home", articles_path %>
 </nav>
-<br>
+
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p>
+
+<%= link_to "Edit meeee!", edit_article_path(@article)%>
