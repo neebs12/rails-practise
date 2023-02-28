@@ -8,4 +8,10 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p>
 
-<%= link_to "Edit meeee!", edit_article_path(@article)%>
+<ul>
+  <li><%= link_to "Edit meeee!", edit_article_path(@article)%></li>
+  <li><%= link_to "Destroy", article_path(@article), data: {
+    turbo_method: :delete, 
+    turbo_confirm: "Are you sure??? :O"
+  }%></li>
+</ul>

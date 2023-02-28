@@ -40,6 +40,14 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # assuming I get a request 
+  ## DELETE /articles/:id
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy # what if this is unsuccessful?
+    redirect_to root_path, status: :see_other
+  end
+
   private
   def article_params
     # appears to be mapping to `form.text_area :symbol`
